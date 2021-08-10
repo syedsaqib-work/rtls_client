@@ -14,6 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Divider, FormControl } from "@material-ui/core";
 import rtsl from "../Static/Images/rtsl1.svg";
 import rtsl1 from "../Static/Images/anfas-logo.png";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   check: {
@@ -124,8 +125,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function Login() {
+  let history = useHistory();
   const classes = useStyles();
+
+  const signInHandler = (e) => {
+    history.push("/dashboard");
+  };
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -136,10 +144,10 @@ export default function Login() {
         </div>
         <div className={classes.projectDiv}>
           <Typography variant="h4">
-            Smart Hand Sanitizer Monitoring System
+            Real Time Locating System
           </Typography>
           <Typography variant="h5" className={classes.productMoto}>
-            For Clean Hands, Safe Hands
+            Show Everything
           </Typography>
         </div>
       </Grid>
@@ -159,7 +167,7 @@ export default function Login() {
             {/* <LockOutlinedIcon /> */}
           </Avatar>
           <Typography component="h1" variant="h5">
-            Hi, Welcome Back!
+            Login
           </Typography>
           <Typography variant="body1" className={classes.text}>
             Enter Your Crenditials to Continue
@@ -169,7 +177,7 @@ export default function Login() {
               <TextField
                 variant="outlined"
                 fullWidth
-                label="Email"
+                label="User Name"
                 color="secondary"
                 type="email"
               />
@@ -205,6 +213,7 @@ export default function Login() {
               variant="contained"
               color="secondary"
               className={classes.submit}
+              onClick={signInHandler}
             >
               Sign In
             </Button>

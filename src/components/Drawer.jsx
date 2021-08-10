@@ -9,11 +9,18 @@ import ListItem from "@material-ui/core/ListItem";
 import Collapse from "@material-ui/core/Collapse";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import PeopleAltIcon from "@material-ui/icons/PeopleAlt";
+import DevicesOtherIcon from "@material-ui/icons/DevicesOther";
+import CreateIcon from "@material-ui/icons/Create";
+import HistoryIcon from "@material-ui/icons/History";
+import EqualizerIcon from "@material-ui/icons/Equalizer";
+import SettingsIcon from "@material-ui/icons/Settings";
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import DynamicFeedIcon from "@material-ui/icons/DynamicFeed";
+import LooksOneIcon from "@material-ui/icons/LooksOne";
+import StorageIcon from "@material-ui/icons/Storage";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
-import StarBorder from "@material-ui/icons/StarBorder";
 import { ListSubheader } from "@material-ui/core";
 import BasicTable from "./BasicTable";
 import DenseTable from "./DenseTable";
@@ -183,9 +190,9 @@ export default function PersistentDrawerLeft(props) {
         <Divider />
         <List className={classes.list}>
           <ListSubheader className={classes.subheader}>
-            Sanitizer Compilant Report
+            RTLS Application
           </ListSubheader>
-          {["Statistics", "Live Report"].map((text, index) => (
+          {["Dashboard", "Statistics", "Live Report"].map((text, index) => (
             <NavLink
               activeClassName={classes.active}
               className={classes.navLink}
@@ -194,38 +201,89 @@ export default function PersistentDrawerLeft(props) {
             >
               <ListItem button className={classes.listText}>
                 <ListItemIcon className={classes.listItemIcon}>
-                  {index % 2 === 0 ? (
-                    <InboxIcon className={classes.iconsize} />
-                  ) : (
-                    <MailIcon className={classes.iconsize} />
+                  {index === 0 && (
+                    <DashboardIcon className={classes.iconsize} />
                   )}
+                  {index === 1 && (
+                    <EqualizerIcon className={classes.iconsize} />
+                  )}
+                  {index === 2 && <StorageIcon className={classes.iconsize} />}
                 </ListItemIcon>
                 <ListItemText primary={text} style={{ marginLeft: "-20px" }} />
               </ListItem>
             </NavLink>
           ))}
         </List>
+
         <Divider style={{ margin: "0 1em" }} />
         <List className={classes.list1}>
-          <ListSubheader className={classes.subheader}>Widget</ListSubheader>
-          {["Widget", "Data", "Chart"].map((text, index) => (
+          <ListSubheader className={classes.subheader}>
+            Sanitizer Report
+          </ListSubheader>
+          {["Count", "Live Feed", "Historical Data"].map((text, index) => (
             <ListItem button key={text} className={classes.listText}>
               <ListItemIcon className={classes.listItemIcon}>
-                {index % 2 === 0 ? (
-                  <InboxIcon className={classes.iconsize} />
-                ) : (
-                  <MailIcon className={classes.iconsize} />
+                {index === 0 && <LooksOneIcon className={classes.iconsize} />}
+                {index === 1 && (
+                  <DynamicFeedIcon className={classes.iconsize} />
+                )}
+                {index === 2 && <HistoryIcon className={classes.iconsize} />}
+              </ListItemIcon>
+              <ListItemText primary={text} style={{ marginLeft: "-20px" }} />
+            </ListItem>
+          ))}
+        </List>
+
+        <Divider style={{ margin: "0 1em" }} />
+        <List className={classes.list1}>
+          <ListSubheader className={classes.subheader}>Tags</ListSubheader>
+          {["Employees", "Assets"].map((text, index) => (
+            <ListItem button key={text} className={classes.listText}>
+              <ListItemIcon className={classes.listItemIcon}>
+                {index === 0 && <PeopleAltIcon className={classes.iconsize} />}
+                {index === 1 && (
+                  <DevicesOtherIcon className={classes.iconsize} />
                 )}
               </ListItemIcon>
               <ListItemText primary={text} style={{ marginLeft: "-20px" }} />
             </ListItem>
           ))}
         </List>
-        <Divider style={{ margin: "0 1em" }} />
+
+        {/* <Divider style={{ margin: "0 1em" }} />
         <List className={classes.list1}>
           <ListSubheader className={classes.subheader}>
-            Application
+            Configuration
           </ListSubheader>
+          {[
+            "Gateway",
+            "Gateway Assignment",
+            "Gateway Status",
+            "Beacon",
+            "Beacon Assignment",
+            "Floor Plan",
+          ].map((text, index) => (
+            <ListItem button key={text} className={classes.listText}>
+              <ListItemIcon className={classes.listItemIcon}>
+                {index === 0 && <LooksOneIcon className={classes.iconsize} />}
+                {index === 1 && (
+                  <DynamicFeedIcon className={classes.iconsize} />
+                )}
+                {index === 2 && <HistoryIcon className={classes.iconsize} />}
+                {index === 3 && <LooksOneIcon className={classes.iconsize} />}
+                {index === 4 && <LooksOneIcon className={classes.iconsize} />}
+                {index === 5 && <LooksOneIcon className={classes.iconsize} />}
+              </ListItemIcon>
+              <ListItemText primary={text} style={{ marginLeft: "-20px" }} />
+            </ListItem>
+          ))}
+        </List> */}
+
+        <Divider style={{ margin: "0 1em" }} />
+        <List className={classes.list1}>
+          {/* <ListSubheader className={classes.subheader}>
+            Configuration
+          </ListSubheader> */}
 
           <ListItem
             button
@@ -234,9 +292,9 @@ export default function PersistentDrawerLeft(props) {
             key="appli"
           >
             <ListItemIcon className={classes.listItemIcon}>
-              <InboxIcon className={classes.iconsize} />
+              <SettingsIcon className={classes.iconsize} />
             </ListItemIcon>
-            <ListItemText primary="Inbox" />
+            <ListItemText primary="Configuration" />
             {open ? <ExpandLess /> : <ExpandMore />}
           </ListItem>
           <Collapse
@@ -246,56 +304,62 @@ export default function PersistentDrawerLeft(props) {
             unmountOnExit
           >
             <List component="div" disablePadding className={classes.list1}>
-              {["account", "settings", "cards", ["one", "two"]].map(
-                (text, index) =>
-                  Array.isArray(text) ? (
-                    <div>
-                      <ListItem
-                        button
-                        onClick={handleNestedClick}
-                        className={classes.listText}
-                        key={text}
-                      >
-                        <ListItemIcon className={classes.listItemIcon}>
-                          <InboxIcon className={classes.iconsize} />
-                        </ListItemIcon>
-                        <ListItemText primary="Inbox" />
-                        {open1 ? <ExpandLess /> : <ExpandMore />}
-                      </ListItem>
-                      <Collapse
-                        in={open1}
-                        timeout="1000"
-                        style={{ transitionDuration: ".5s" }}
-                        unmountOnExit
-                      >
-                        <List
-                          component="div"
-                          disablePadding
-                          className={classes.list1}
-                        >
-                          {["one", "two"].map((tx) => (
-                            <ListItem
-                              button
-                              className={classes.listText}
-                              key={tx}
-                            >
-                              <ListItemIcon className={classes.listItemIcon}>
-                                <StarBorder className={classes.iconsize} />
-                              </ListItemIcon>
-                              <ListItemText primary={tx} />
-                            </ListItem>
-                          ))}
-                        </List>
-                      </Collapse>
-                    </div>
-                  ) : (
-                    <ListItem button className={classes.listText} key={text}>
-                      <ListItemIcon className={classes.listItemIcon}>
-                        <StarBorder className={classes.iconsize} />
-                      </ListItemIcon>
-                      <ListItemText primary={text} />
+              {[
+                "Gateway",
+                "Gateway Assignment",
+                "Gateway Status",
+                "Beacon",
+                "Beacon Assignment",
+                "Floor Plan",
+              ].map((text, index) =>
+                Array.isArray(text) ? (
+                  <div>
+                    <ListItem
+                      button
+                      onClick={handleNestedClick}
+                      className={classes.listText}
+                      key={text}
+                    >
+                      {/* <ListItemIcon className={classes.listItemIcon}>
+                        <InboxIcon className={classes.iconsize} />
+                      </ListItemIcon> */}
+                      {/* <ListItemText primary="Inbox" /> */}
+                      {open1 ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
-                  )
+                    <Collapse
+                      in={open1}
+                      timeout="1000"
+                      style={{ transitionDuration: ".5s" }}
+                      unmountOnExit
+                    >
+                      {/* <List
+                        component="div"
+                        disablePadding
+                        className={classes.list1}
+                      >
+                        {["one", "two"].map((tx) => (
+                          <ListItem
+                            button
+                            className={classes.listText}
+                            key={tx}
+                          >
+                            <ListItemIcon className={classes.listItemIcon}>
+                              <StarBorder className={classes.iconsize} />
+                            </ListItemIcon>
+                            <ListItemText primary={tx} />
+                          </ListItem>
+                        ))}
+                      </List> */}
+                    </Collapse>
+                  </div>
+                ) : (
+                  <ListItem button className={classes.listText} key={text}>
+                    <ListItemIcon className={classes.listItemIcon}>
+                      <CreateIcon className={classes.iconsize} />
+                    </ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                )
               )}
             </List>
           </Collapse>

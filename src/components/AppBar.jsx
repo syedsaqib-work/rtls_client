@@ -189,7 +189,7 @@ const NavBar = () => {
               style={{ borderRadius: "12px", padding: "12px" }}
             >
               <Typography variant="body1" style={{ padding: "5px" }}>
-                Good Morning, John
+                Good Morning, Waseem.
               </Typography>
               <Divider />
               <List component="nav" aria-label="account settings">
