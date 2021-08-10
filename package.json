@@ -1,5 +1,5 @@
 {
-  "homepage": "https://github.com/syedsaqib-work/rtls_client_demo",
+  "homepage": "https://syedsaqib-work.github.io/rtls_client_demo",
   "name": "rtls_client",
   "version": "0.1.0",
   "private": true,
@@ -18,8 +18,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
