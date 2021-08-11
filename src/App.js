@@ -8,7 +8,7 @@ import { ThemeProvider } from "@material-ui/core";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/rtls_client">
         <div className="App">
           <Route exact path="/" component={Login} />
           <Route path="/dashboard" component={AppBar} />
