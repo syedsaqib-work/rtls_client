@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/rtls_client/static/css/main.2ae47eeb.chunk.css",
-    "main.js": "/rtls_client/static/js/main.4588f001.chunk.js",
-    "main.js.map": "/rtls_client/static/js/main.4588f001.chunk.js.map",
+    "main.js": "/rtls_client/static/js/main.b9ad0ea4.chunk.js",
+    "main.js.map": "/rtls_client/static/js/main.b9ad0ea4.chunk.js.map",
     "runtime-main.js": "/rtls_client/static/js/runtime-main.ce100e85.js",
     "runtime-main.js.map": "/rtls_client/static/js/runtime-main.ce100e85.js.map",
     "static/js/2.3368bc94.chunk.js": "/rtls_client/static/js/2.3368bc94.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.ce100e85.js",
     "static/js/2.3368bc94.chunk.js",
     "static/css/main.2ae47eeb.chunk.css",
-    "static/js/main.4588f001.chunk.js"
+    "static/js/main.b9ad0ea4.chunk.js"
   ]
 }
