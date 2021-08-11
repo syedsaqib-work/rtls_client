@@ -2,7 +2,7 @@
   "homepage": "https://syedsaqib-work.github.io/rtls_client",
   "name": "rtls_client",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.12.0",
     "@material-ui/icons": "^4.11.2",
